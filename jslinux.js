@@ -150,7 +150,7 @@ function start()
        disable gzip decompression in this case, which would be too
        slow. */
     cmdline_addr = 0xf800;
-    pc.cpu.write_string(cmdline_addr, "console=ttyS0 root=/dev/ram0 rw init=/bin/sh notsc=1");
+    pc.cpu.write_string(cmdline_addr, "console=ttyS0 root=/dev/ram0 rw init=/sbin/init notsc=1");
 
     pc.cpu.eip = start_addr;
     pc.cpu.regs[0] = params.mem_size; /* eax */
