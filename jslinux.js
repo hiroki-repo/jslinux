@@ -111,7 +111,7 @@ function load_binaries() {
     console.log("requesting binaries");
     loadbinary("vmlinux-2.6.20.bin", 0);
 //    loadbinary("vmlinuz", 0);
-    loadbinary("rootfs2.img", 1);
+    loadbinary("root.bin", 1);
     loadbinary("linuxstart.bin", 2);
 
     console.log("waiting for binaries to finish loading...");
