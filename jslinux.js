@@ -110,7 +110,7 @@ function checkbinaries() {
 function load_binaries() {
     console.log("requesting binaries");
     loadbinary("vmlinux-2.6.20.bin", 0);
-    loadbinary("root.bin", 1);
+    loadbinary("rootfs2.img", 1);
     loadbinary("linuxstart.bin", 2);
 
     console.log("waiting for binaries to finish loading...");
@@ -149,7 +149,7 @@ function start()
        disable gzip decompression in this case, which would be too
        slow. */
     cmdline_addr = 0xf800;
-    pc.cpu.write_string(cmdline_addr, "console=ttyS0 root=/dev/ram0 rw init=/sbin/init notsc=1");
+    pc.cpu.write_string(cmdline_addr, "console=ttyS0 root=/dev/ram0 rw init=/bin/sh notsc=1");
 
     pc.cpu.eip = start_addr;
     pc.cpu.regs[0] = params.mem_size; /* eax */
